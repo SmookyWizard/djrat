@@ -1,0 +1,2 @@
+# djrat
+Discord music bot
