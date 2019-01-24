@@ -34,7 +34,7 @@ client.on('message', async msg => { // eslint-disable-line
 
 	if (command === 'play') {
 		const voiceChannel = msg.member.voiceChannel;
-		if (!voiceChannel) return msg.channel.send('Я\' извеняюсь, вы должны зайти в голосовой канал!');
+		if (!voiceChannel) return msg.channel.send('Вы должны зайти в голосовой канал!');
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
 		if (!permissions.has('CONNECT')) {
 			return msg.channel.send('Я не могу подключится к голосовому каналу, имейте ввиду у меня должны быть права!');
@@ -74,7 +74,7 @@ ${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}
 						});
 					} catch (err) {
 						console.error(err);
-						return msg.channel.send('Введено неправильный номер, отмена выбора.');
+						return msg.channel.send('Введен неправильный номер, отмена выбора.');
 					}
 					const videoIndex = parseInt(response.first().content);
 					var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
